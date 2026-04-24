@@ -27,6 +27,8 @@ public class FuncionesEval {
         else return false;
     }
 
+
+
     /**
      * Método de la clase que devuelve el tipo de clima que se
      * da en un azona geográfica en función de la temperatura
@@ -55,9 +57,16 @@ public class FuncionesEval {
      * @return Cantidad de veces que aparece el número en el array.
      */
     public static int contarApariciones(int[] numeros, int valor) {
-        return 0;
+        int contador = 0;
+        if (numeros != null) {
+            for (int n : numeros) {
+                if (n == valor) {
+                    contador++;
+                }
+            }
+        }
+        return contador;
     }
-
 
    /**
      * Invierte el orden de los elementos de un array de enteros.
@@ -84,7 +93,7 @@ public class FuncionesEval {
             fin--;
         }
 
-        return array; // Devuelve el array invertido
+        return array;
     }
 
     /**
@@ -93,9 +102,18 @@ public class FuncionesEval {
      * @return El número mayor en el array.
      * @throws IllegalArgumentException Si el array está vacío o es null.
      */
+
     public static int encontrarMayor(int[] array) {
-        return 0;
+        if (array == null || array.length == 0) {
+            throw new IllegalArgumentException();
+        }
+
+        int mayor = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] > mayor) {
+                mayor = array[i];
+            }
+        }
+        return mayor;
     }
-
-
 }
